@@ -5,34 +5,33 @@
  * Return: the number of characters printed
  */
 int _printf(const char *format, ...)
-{
-	int count = 0;
+{int count = 0;
 	va_list args;
+
+	va_start(args, format);
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(args, format);
-
 	while (*format)
 	{
 		if (*format == '%')
-		{
-			format++;
+		{format++;
+			if (*format == '\0')
+				return (-1);
 
-			if (*format == '\0') return (-1);
-			
 			if (*format == 'c')
-			{
-				count += _putchar(va_arg(args, int));
+			{count += _putchar(va_arg(args, int));
 			}
 			else if (*format == 's')
 			{
 				const char *str = va_arg(args, const char *);
 
-				if (!str) str = "(null)";
+				if (!str)
+					str = "(null)";
 
-				while (*str) count += _putchar(*str++);
+				while (*str)
+					count += _putchar(*str++);
 			}
 			else if (*format == '%')
 			{
