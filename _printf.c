@@ -42,6 +42,12 @@ int _printf(const char *format, ...)
 		{
 			count += _putchar(*format);
 		}
+		int str_len = 0;
+		
+		while (str[str_len] != '/0')
+			str_len++;
+		_putchar(str_len);
+		count += str_len;
 		format++;
 	}
 	va_end(args);
