@@ -9,7 +9,6 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-
 	if (format == NULL)
 		return (-1);
 
@@ -29,14 +28,15 @@ int _printf(const char *format, ...)
 
 				if (!str)
 					str = "(null)";
-
 				while (*str)
 					count += _putchar(*str++);
 			}
+
 			else if (*format == '%')
 			{
 				count += _putchar('%');
 			}
+
 		}
 		else
 		{
