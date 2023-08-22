@@ -8,8 +8,7 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int _printf_int(const char *format, ...);
-int _print_binary(unsigned int n, char *buffer, size_t size);
-
+int_strlen(char *s);
+void print_num(int n);
 
 #endif
