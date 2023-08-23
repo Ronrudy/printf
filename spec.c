@@ -1,9 +1,13 @@
 #include "main.h"
-/* handle_conversion_specifier -handles the conversion specifier
- * @specifiers: specifiers to work on
+/**
+ * handle_conversion_specifier -handles the conversion specifier
+ * @specifier: specifiers to work on
+ * @args: arguments
+ * @length: length
  * Return: specifiers
  */
-void handle_conversion_specifier(const char specifier, va_list args, int *length)
+void handle_conversion_specifier(const char specifier,
+va_list args, int *length)
 {
 	char *str;
 
@@ -13,7 +17,8 @@ void handle_conversion_specifier(const char specifier, va_list args, int *length
 			_putchar((char) va_arg(args, int));
 			(*length)++;
 			break;
-		case 's': ;
+		case 's':
+			;
 			str = va_arg(args, char*);
 
 			(*length) += _puts(str);

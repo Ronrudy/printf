@@ -20,11 +20,12 @@ int print_int(va_list args)
 
 	length += print_positive_int(num);
 
-	return length;
+	return (length);
 }
 
 /**
  * print_positive_int - print positive integer
+ * @num: argument
  * Return: number of characters printed
  */
 
@@ -37,7 +38,7 @@ int print_positive_int(int num)
 	if (num == 0)
 	{
 		_putchar('0');
-		return 1;
+		return (1);
 	}
 
 	while (num > 0)
@@ -55,5 +56,5 @@ int print_positive_int(int num)
 		length++;
 	}
 
-	return length;
+	return (length);
 }
