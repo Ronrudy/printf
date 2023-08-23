@@ -18,7 +18,6 @@ va_list args, int *length)
 			(*length)++;
 			break;
 		case 's':
-			;
 			str = va_arg(args, char*);
 
 			(*length) += _puts(str);
