@@ -5,14 +5,17 @@
  */
 void handle_conversion_specifier(const char specifier, va_list args, int *length)
 {
+	char *str;
+
 	switch (specifier)
 	{
 		case 'c':
 			_putchar((char) va_arg(args, int));
 			(*length)++;
 			break;
-		case 's':
-			char *str = va_arg(args, char*);
+		case 's': ;
+			str = va_arg(args, char*);
+
 			(*length) += _puts(str);
 			break;
 		case 'd':
